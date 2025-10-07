@@ -47,7 +47,8 @@ CREATE TABLE `tbl_student` (
   `name` varchar(55) NOT NULL,
   `roll_number` int(11) NOT NULL,
   `dob` date NOT NULL,
-  `class` varchar(55) NOT NULL
+  `class` varchar(55) NOT NULL,
+  `Major` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

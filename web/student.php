@@ -8,6 +8,7 @@
                 <tr>
                     <th><strong>Student Name</strong></th>
                     <th><strong>Roll Number</strong></th>
+                    <th><strong>Major</strong></th>
                     <th><strong>Date of Birth</strong></th>
                     <th><strong>Class</strong></th>
                     <th><strong>Action</strong></th>
@@ -22,8 +23,10 @@
           <tr>
                     <td><?php echo $result[$k]["name"]; ?></td>
                     <td><?php echo $result[$k]["roll_number"]; ?></td>
+                    <td><?php echo isset($result[$k]["major"]) ? $result[$k]["major"] : ''; ?></td>
                     <td><?php echo $result[$k]["dob"]; ?></td>
                     <td><?php echo $result[$k]["class"]; ?></td>
+                    
                     <td><a class="btnEditAction"
                         href="index.php?action=student-edit&id=<?php echo $result[$k]["id"]; ?>">
                         <img src="web/image/icon-edit.png" />
@@ -45,5 +48,7 @@
         
         </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </body>
 </html>

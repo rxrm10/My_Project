@@ -94,10 +94,11 @@ switch ($action) {
                 $dob_timestamp = strtotime($_POST["dob"]);
                 $dob = date("Y-m-d", $dob_timestamp);
             }
+            $major = $_POST['major'];
             $class = $_POST['class'];
             
             $student = new Student();
-            $insertId = $student->addStudent($name, $roll_number, $dob, $class);
+            $insertId = $student->addStudent($name, $roll_number, $dob, $class, $major);
             if (empty($insertId)) {
                 $response = array(
                     "message" => "Problem in Adding New Record",
@@ -122,6 +123,7 @@ switch ($action) {
                 $dob_timestamp = strtotime($_POST["dob"]);
                 $dob = date("Y-m-d", $dob_timestamp);
             }
+            $major = $_POST['major'];
             $class = $_POST['class'];
             
             $student->editStudent($name, $roll_number, $dob, $class, $student_id);

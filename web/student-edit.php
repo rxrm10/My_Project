@@ -20,6 +20,11 @@
         <input type="text" name="dob" id="dob" class="demoInputBox"
             value="<?php echo $result[0]["dob"]; ?>">
     </div>
+     <div>
+        <label>Major</label> <span id="major-info" class="info"></span><br />
+        <input type="text" name="major" id="major" class="demoInputBox"
+            value="<?php echo $result[0]["major"]; ?>">
+    </div>
     <div>
         <label>Class</label> <span id="class-info" class="info"></span><br />
         <input type="text" name="class" id="class" class="demoInputBox"
@@ -56,9 +61,16 @@ function validate() {
         $("#class-info").html("(required)");
         $("#class").css('background-color','#FFFFDF');
         valid = false;
-    }   
+    } 
+     if(!$("#major").val()) {
+        $("#major-info").html("(required)");
+        $("#major").css('background-color','#FFFFDF');
+        valid = false;
+    } 
     return valid;
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     </body>
     </html>

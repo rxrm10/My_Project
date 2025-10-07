@@ -8,29 +8,31 @@ class Student
         $this->db_handle = new DBController();
     }
     
-    function addStudent($name, $roll_number, $dob, $class) {
-        $query = "INSERT INTO tbl_student (name,roll_number,dob,class) VALUES (?, ?, ?, ?)";
-        $paramType = "siss";
+    function addStudent($name, $roll_number, $dob, $class, $major) {
+        $query = "INSERT INTO tbl_student (name,roll_number,dob,class,major) VALUES (?, ?, ?, ?,?)";
+        $paramType = "sisss";
         $paramValue = array(
             $name,
             $roll_number,
             $dob,
-            $class
+            $class,
+            $major
         );
         
         $insertId = $this->db_handle->insert($query, $paramType, $paramValue);
         return $insertId;
     }
     
-    function editStudent($name, $roll_number, $dob, $class, $student_id) {
-        $query = "UPDATE tbl_student SET name = ?,roll_number = ?,dob = ?,class = ? WHERE id = ?";
-        $paramType = "sissi";
+    function editStudent($name, $roll_number, $dob, $class, $student_id, $major) {
+        $query = "UPDATE tbl_student SET name = ?,roll_number = ?,dob = ?,class = ?,major = ? WHERE id = ?";
+        $paramType = "sissis";
         $paramValue = array(
             $name,
             $roll_number,
             $dob,
             $class,
-            $student_id
+            $student_id,
+            $major
         );
         
         $this->db_handle->update($query, $paramType, $paramValue);
